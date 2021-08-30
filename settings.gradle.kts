@@ -4,6 +4,7 @@ pluginManagement {
         id("com.github.johnrengelman.shadow") version "7.0.0"
         id("org.unbroken-dome.test-sets") version "4.0.0"
         id("io.github.gradle-nexus.publish-plugin") version "1.1.0"
+        id("nebula.release") version "15.3.1"
     }
 }
 
@@ -16,6 +17,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "opentelemetry-java-contrib"
 
+include(":all")
 include(":aws-xray")
 include(":dependencyManagement")
 include(":example")

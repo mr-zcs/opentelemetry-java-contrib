@@ -3,13 +3,13 @@ import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 plugins {
     `java-library`
 
+    id("otel.jacoco-conventions")
     id("otel.spotless-conventions")
 }
 
 group = "io.opentelemetry.contrib"
-version = "1.3.0-alpha"
 
-base.archivesBaseName = "opentelemetry-${project.name}"
+base.archivesName.set("opentelemetry-${project.name}")
 
 java {
     toolchain {
@@ -85,6 +85,7 @@ dependencies {
     testImplementation("org.awaitility:awaitility")
     testImplementation("org.junit.jupiter:junit-jupiter-api")
     testImplementation("org.junit.jupiter:junit-jupiter-params")
+    testImplementation("org.mockito:mockito-junit-jupiter")
 
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
     testRuntimeOnly("org.junit.vintage:junit-vintage-engine")
